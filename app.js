@@ -9,7 +9,7 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const port = 88; // You can change this port as needed
+const port = 2888; // You can change this port as needed
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
@@ -88,6 +88,10 @@ app.post('/steganography/encode', upload.single('image'), (req, res) => {
 app.post('/steganography/decode', upload.single('image'), async (req, res) => {
   try {
     const { publicKeyHex, privateSecretHex, nonceHex } = req.body;
+
+    if (publicKeyHex == '' || privateSecretHex == '' || nonceHex == '') {
+      throw Error()
+    }
 
     let publicKey = hexToUint8Array(publicKeyHex)
     let privateSecret = hexToUint8Array(privateSecretHex)
