@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "jimp": "^0.22.10",
+    "multer": "^1.4.5-lts.1",
+    "multipart": "^0.1.5",
+    "tweetnacl": "^1.0.3"
+  },
+  "name": "uas",
+  "version": "1.0.0",
+  "main": "GenerateKey.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
